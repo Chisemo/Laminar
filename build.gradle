@@ -30,7 +30,12 @@ dependencies {
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
+    implementation "org.lwjgl:lwjgl:${project.lwjgl_version}"
     implementation "org.lwjgl:lwjgl-opencl:${project.lwjgl_version}"
+
+    include "org.lwjgl:lwjgl:${project.lwjgl_version}"
+    include group: "org.lwjgl", name: "lwjgl", version: project.lwjgl_version, classifier: "natives-windows"
+    include group: "org.lwjgl", name: "lwjgl", version: project.lwjgl_version, classifier: "natives-linux"
     include "org.lwjgl:lwjgl-opencl:${project.lwjgl_version}"
 }
 

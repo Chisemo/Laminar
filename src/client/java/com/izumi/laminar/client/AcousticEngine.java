@@ -67,14 +67,6 @@ public class AcousticEngine {
    private static final float SOLID_COST = 5.0F;
 
    public static boolean isEfxAvailable() {
-      if (!efxInitialized) {
-         long context = ALC10.alcGetCurrentContext();
-         if (context != 0L) {
-            initializeEFX();
-            efxInitialized = true;
-         }
-      }
-
       return efxAvailable;
    }
 
@@ -171,7 +163,7 @@ public class AcousticEngine {
             Channel channel = soundChannels.get(sound);
             if (channel != null) {
                int sourceId = ((ChannelAccessor)channel).laminar$getSourceId();
-               if (sourceId != 0 && AL11.alIsSource(sourceId)) {
+               if (sourceId != 0) {
                   AL11.alSourcei(sourceId, 131077, 0);
                   AL11.alSource3i(sourceId, 131078, 0, 0, 0);
                }

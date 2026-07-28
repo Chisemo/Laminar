@@ -44,7 +44,7 @@ public class LaminarOpenCLManager {
    private ByteBuffer pMappedAuraInputBuffer;
    private ByteBuffer pMappedAuraOutputBuffer;
    private int currentPingPongIndex = 0;
-   private static volatile String lockedGpuName = "None";
+   private static String lockedGpuName = "None";
 
    public static synchronized LaminarOpenCLManager getInstance() {
       if (instance == null) {
