@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"package": "com.izumi.laminar.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"MobMixin",
+		"SensingMixin",
+		"PathNavigationMoveToMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
