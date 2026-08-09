@@ -1,0 +1,17 @@
+{
+	"required": true,
+	"package": "com.izumi.laminar.client.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"client": [
+		"SoundEngineMixin",
+		"ChannelMixin",
+		"ChannelHandleMixin",
+		"DebugScreenOverlayMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

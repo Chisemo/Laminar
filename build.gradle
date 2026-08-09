@@ -30,8 +30,12 @@ dependencies {
     implementation "net.fabricmc:fabric-loader:${project.loader_version}"
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-    implementation "org.lwjgl:lwjgl-opencl:${project.lwjgl_version}"
-    include "org.lwjgl:lwjgl-opencl:${project.lwjgl_version}"
+    // Use the exact nested artifact recovered from the original mod JAR.
+    // Keeping it as an implementation input preserves the original package
+    // layout while avoiding a second, generated copy during jar assembly.
+    implementation files(
+        "src/main/resources/META-INF/jars/lwjgl-opencl-3.3.3.jar"
+    )
 }
 
 tasks.withType(JavaCompile).configureEach {
